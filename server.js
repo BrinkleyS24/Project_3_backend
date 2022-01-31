@@ -8,7 +8,7 @@ const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const morgan = require("morgan");
-
+const mealsController = require('./controllers/meal')
 ///////////////////////////////
 // DATABASE CONNECTION
 ////////////////////////////////
@@ -29,10 +29,12 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 
+
+app.get("/", (req, res) => res.redirect("/meals"))
 ///////////////////////////////
 // ROUTES
 ////////////////////////////////
-
+app.use("/meals", mealsController);
 ///////////////////////////////
 // LISTENER
 ////////////////////////////////
