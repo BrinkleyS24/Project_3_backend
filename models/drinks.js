@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 const drinksSchema = new mongoose.Schema({
     name: {type: String, required: true},
     image: String,
-    size: String,
     price: Number,
     quantity: Number,
 }, {timestamps: true})
