@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const morgan = require("morgan");
 const mealsController = require('./controllers/meal')
+const drinksController = require('./controllers/drink')
 ///////////////////////////////
 // DATABASE CONNECTION
 ////////////////////////////////
@@ -35,6 +36,7 @@ app.get("/", (req, res) => res.redirect("/meals"))
 // ROUTES
 ////////////////////////////////
 app.use("/meals", mealsController);
+app.use("/drinks", drinksController)
 ///////////////////////////////
 // LISTENER
 ////////////////////////////////

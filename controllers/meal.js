@@ -15,7 +15,7 @@ mealsRouter.get("/", async (req, res) => {
 // Delete
 mealsRouter.delete("/:id", async (req, res) => {
     try {
-        res.json(await Meal.find({}))
+        res.json(await Meal.findByIdAndRemove(req.params.id))
     } catch (error) {
         res.status(400).json(error)
     }
