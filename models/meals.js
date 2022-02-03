@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 const mealsSchema = new mongoose.Schema({
     recipeName: {type: String, required: true},
     recipeThumb: String,
-    price: Number,
-    qty: Number,
+    price: String,
+    qty: String,
 }, {timestamps: true})
 
 const Meals = mongoose.model('Meals', mealsSchema);

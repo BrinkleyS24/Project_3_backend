@@ -32,6 +32,7 @@ mealsRouter.put("/:id", async (req, res) => {
 
 // Create
 mealsRouter.post("/", async (req, res) => {
+    console.log(req.body)
     try {
         res.json(await Meal.create(req.body))
     } catch (error) {
